@@ -36,19 +36,18 @@ const questions = [
         name: 'test'
     },
     {
-        type: 'list',
+        type: 'rawlist',
         message: 'What license is this project covered under? Please select one of the options.',
         name: 'license',
         choices: [
-            '1)\tMIT License',
-            '2)\tApache License 2.0',
-            '3)\tBSD 3-Clause "New" or "Revised" License',
-            '4)\tBSD 2-Clause "Simplified" or "FreeBSD" License',
-            '5)\tGNU General Public License (GPL)',
-            '6)\tGNU Library or "Lesser" General Public License (LGPL)',
-            '7)\tMozilla Public License 2.0',
-            '8)\tCommon Development and Distribution License',
-            '9)\tEclipse Public License version 2.0'
+            'MIT License',
+            'Apache License 2.0',
+            'GNU AGPLv3',
+            'GNU GPLv3',
+            'GNU LGPLv3',
+            'Mozilla Public License 2.0',
+            'Boost Software License 1.0',
+            'The Unlicense'
         ],
         default: 0,
     },
@@ -64,29 +63,24 @@ const questions = [
     },
 ]
 
-inquirer
+
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
+    //Initialize file with title
+    fs.writeFile(fileName,generateMarkdown(data), 
+        (err) => err ? console.log(err) : console.log('README Successfully generated!')
+    );
+};
+
+// TODO: Create a function to initialize app
+function init() {
+    inquirer
     .prompt(questions)
     .then((data)=> {
         const fileName = 'README.md';
         writeToFile(fileName,data)
     });
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    //Initialize file with title
-    fs.writeFile(
-        fileName,
-        `# ${data.title}`, 
-        (err) => err ? console.log(err) : console.log('README Successfully generated!')
-    );
-    fs.appendFile(
-        fileName,
-        `## ${data.description}`,
-        (err) => err ? console.log(err) : console.log('README Successfully generated!')
-        );
-};
-
-// TODO: Create a function to initialize app
-function init() {}
+}
 
 // Function call to initialize app
 init();
