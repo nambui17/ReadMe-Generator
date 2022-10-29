@@ -42,12 +42,16 @@ const questions = [
         choices: [
             'MIT License',
             'Apache License 2.0',
-            'GNU AGPLv3',
-            'GNU GPLv3',
-            'GNU LGPLv3',
             'Mozilla Public License 2.0',
             'Boost Software License 1.0',
-            'The Unlicense'
+            'The Unlicense',
+            'Creative Commons Zero v1.0 Universal',
+            'Eclipse Public License 2.0',
+            'BSD 2-Clause "Simplified" License',
+            'BSD 3-Clause "New" or "Revised" License',
+            'GNU Affero General Public License v3.0',
+            'GNU General Public License v2.0',
+            'GNU Lesser General Public License v2.1'
         ],
         default: 0,
     },
@@ -67,7 +71,7 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     //Initialize file with title
-    fs.writeFile(fileName,generateMarkdown(data), 
+    fs.writeFile(fileName, generateMarkdown.generateMarkdown(data), 
         (err) => err ? console.log(err) : console.log('README Successfully generated!')
     );
 };
