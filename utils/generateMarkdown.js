@@ -111,18 +111,22 @@ function generateMarkdown(data) {
   - [License](#license)
   - [Contribution](#contribution)
   - [Test](#test)\n
+  ## Installation\n
+  ${data.installation}\n
   ## Usage\n
   ${data.usage}\n
   ## Credits\n
-  [${data.GitHub}](https://github.com/${data.GitHub})\n
   ## License \n
-  ${renderLicenseSection(data.license)}
+  ${renderLicenseSection(data.license)}\n
   ${renderLicenseLink(data.license)}\n
-  ## Contribution\n
-  ${data.contribution}
-  E-mail: ${data.email}\n
-  ## Test\n
-  ${data.test}`;
+  ## Contributing\n
+  ${data.contribution}\n
+  ## Tests\n
+  ${data.test}\n
+  ## Questions\n
+  Please visit my GitHub profile or reach me at my email for any further questions!\n
+  GitHub Link: [${data.GitHub}](https://github.com/${data.GitHub})\n
+  E-mail: ${data.email}`;
 };
 
 module.exports = {
