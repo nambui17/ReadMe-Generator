@@ -31,7 +31,9 @@
 
   ## Usage
   
-  Run ```node index.js``` after navigating to the README-Generator folder at the command line to start the README Generator CLI application. The application will lead you through several prompts with questions about the title of the project, description of the project, installation instructions, etc. Enter any information you want to include in the README here. After all prompts have been answered, a README will be generated with the data entered into the prompts.
+  Run ```node index.js``` after navigating to the README-Generator folder at the command line to start the README Generator CLI application. The application will lead you through several prompts with questions about the title of the project, description of the project, installation instructions, etc. Enter any information you want to include in the README here. After all prompts have been answered, a README will be generated with the data entered into the prompts. The generated README will have the filename README.md. A sample README that was generated using this application is included under a different title SAMPLE_README in the GitHub Repo.
+
+  [Instruction Video Link](https://watch.screencastify.com/v/53j7ovcaQyEYtQIluink)
 
   __WARNING__: _After the README Generator is run, this README will be rewritten with the new generated README_
 
